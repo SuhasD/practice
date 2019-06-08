@@ -1,0 +1,11 @@
+{
+ "name" : "Elegant Navbar",
+ "version" : "0.0.1",
+ "description" : "A minimal navbar for tab navigation",
+ "main" : "server.js",
+ "author" : {
+  "name" : "Suhas D",
+  "email" : "suhasdwarakanath@gmail.com",
+  "website" : "www.suhasd.com"
+ }
+}

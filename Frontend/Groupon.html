@@ -1,0 +1,289 @@
+<html>
+  <!--  
+      Problem Statement
+      
+     Based on the e-mail instructions create the accordion asked.
+
+     The problem has 3 substasks, you should do them in order since it'll help us to assess your level in a better way
+  -->
+  <head>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        font-family: Open Sans,OpenSans,system,-apple-system,BlinkMacSystemFont,Roboto,Arial,FreeSans,sans-serif;
+      }
+      
+      
+    #accordion {
+      margin: 10% auto;
+      width: 50%;
+      background-color:#208000;
+      padding:10px;
+    }
+    .acc-item {
+      margin: 0 auto;
+    }
+    .acc-title {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+      font-size:16px;
+      font-weight:normal;
+      padding: 5%;
+      margin: 0;
+      color: #101010;
+    }
+    .acc-title:hover {
+      cursor: pointer;
+    }
+    .acc-text {
+      /*display: none;*/
+      color:#6f726f;
+/*       padding: 6% 3%; */
+      margin: 0;
+      background-color: #c8e5ca;
+      
+    }
+      
+      .deal{
+        font-size:16px; 
+        border-bottom: 1px solid #ccc;
+        padding:2px 40px;
+      }
+      
+      .total, .deal-price{
+       float:right; 
+      }
+
+    @media (max-width: 600px) {
+      #accordion {
+        width: 95%;
+      }
+    }
+      
+      .add-deal{
+        padding:10px 35px;
+      }
+      
+      button.add{
+        color:#0608fe;
+        border:0;
+        background:none;
+        text-decoration: underline;
+        cursor:pointer;
+        font-size:16px;
+        
+      }
+      
+      /* Write your CSS here */
+    </style>
+  </head>
+  <body>
+    <!-- Write your HTML here -->
+      <div class='accordion-container'>
+        <div id="accordion">
+            <div class="acc-item">
+              <h3 class="acc-title">Local Deals 
+                <span class='total'>Total: $<span class='dynamic-total'>30</span></span>
+              </h3>
+              <div class="acc-text" style="display:none;">
+                
+                <div class='deal'>
+                  <p class='deal-number'>Deal 1 
+                    <span class='deal-price'>$10</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 2 
+                    <span class='deal-price'>$15</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 3 
+                    <span class='deal-price'>$5</span>
+                  </p>  
+                </div>
+                <div class='add-deal'>
+                  <button class='add'>Add deal </button>
+                </div>
+              
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <h3 class="acc-title">Gateway Deals 
+                <span class='total'>Total: $<span class='dynamic-total'>79</span></span>
+              </h3>
+              
+              <div class="acc-text" style="display:none;">
+                <div class='deal'>
+                  <p class='deal-number'>Deal 1 
+                    <span class='deal-price'>$40</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 2 
+                    <span class='deal-price'>$30</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 3 
+                    <span class='deal-price'>$9</span>
+                  </p>  
+                </div>
+                <div class='add-deal'>
+                  <button class='add'>Add deal </button>
+                </div>
+              </div>
+            </div>
+
+          
+          
+          
+          
+          
+            <div class="acc-item">
+              <h3 class="acc-title">Goods Deals 
+                <span class='total'>Total: $<span class='dynamic-total'>551</span></span>
+              </h3>
+              
+              <div class="acc-text" style="display:none;">
+                  <div class='deal'>
+                  <p class='deal-number'>Deal 1 
+                    <span class='deal-price'>$100</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 2 
+                    <span class='deal-price'>$400</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 3 
+                    <span class='deal-price'>$51</span>
+                  </p>  
+                </div>
+                <div class='add-deal'>
+                  <button class='add'>Add deal </button>
+                </div>
+              </div>
+            </div>
+          
+          <div class="acc-item">
+              <h3 class="acc-title">Groupon + Deals 
+                <span class='total'>Total: $<span class='dynamic-total'>150</span></span>
+              </h3>
+              
+              <div class="acc-text" style="display:none;">
+                  <div class='deal'>
+                  <p class='deal-number'>Deal 1 
+                    <span class='deal-price'>$100</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 2 
+                    <span class='deal-price'>$40</span>
+                  </p>  
+                </div>
+                <div class='deal'>
+                  <p class='deal-number'>Deal 3 
+                    <span class='deal-price'>$10</span>
+                  </p>  
+                </div>
+                <div class='add-deal'>
+                  <button class='add'>Add deal </button>
+                </div>
+              </div>
+            </div>
+          
+          
+          </div>  
+        
+      </div>
+  
+    <script>
+      // Write your JS here
+      var items = document.querySelectorAll('.acc-title');
+    
+      items.forEach((item) =>
+      {
+        item.addEventListener("click", () =>  
+        {
+          if(item.nextElementSibling.style.display === "none")
+          {
+            item.nextElementSibling.style.display = "block";
+          }
+          else 
+          {
+            item.nextElementSibling.style.display = "none";
+          }
+
+        });
+      });
+      
+      
+      let addBtns = document.getElementsByClassName('add');
+      for(let i = 0; i<addBtns.length; i++){
+        addBtns[i].addEventListener('click', addDeal);
+      }
+      
+      function addDeal(e){
+        // console.log(e.target.parentNode.parentNode);
+        let subDealsContainer = e.target.parentNode.parentNode
+        var dealNumber = subDealsContainer.querySelectorAll('.deal').length + 1;
+        console.log(dealNumber);
+        var newDeal = document.createElement("div");
+        
+        var newDealNameTag = document.createElement("p");
+        var newDealText = document.createTextNode("Deal "+dealNumber);
+        
+        var newDealPriceTag = document.createElement("span");
+        var newDealPrice = document.createTextNode("$"+getRandomPrice());
+        
+        
+        newDeal.classList.add('deal');
+        newDealNameTag.classList.add('deal-number');
+        newDealPriceTag.classList.add('deal-price');
+        
+        newDealNameTag.appendChild(newDealText);  
+        newDeal.appendChild(newDealNameTag);
+        
+        newDealPriceTag.appendChild(newDealPrice);  
+        newDealNameTag.appendChild(newDealPriceTag);  
+        
+        subDealsContainer.insertBefore(newDeal, e.target.parentNode);
+        
+        updateTotalPrice(e);
+      }
+      
+      function getRandomPrice(){
+        return Math.floor(Math.random() * 20); 
+      }
+
+      
+      function updateTotalPrice(e){
+        var section = e.target.parentNode.parentNode;
+        var totalPriceElem = section.parentNode.querySelector('.acc-title span .dynamic-total');
+        
+        var deals = section.childNodes;
+        console.log(section.childNodes);
+        console.log(deals);
+        
+        let total = 0;
+        for(let i = 0; i< deals.length; i++){
+          if(deals[i].className == 'deal'){
+            var price = deals[i].querySelector('span.deal-price').textContent
+            price = price.replace(/\$/g,'');
+            price = parseInt(price);
+            total = parseInt(total) + price;
+          }
+        }
+        // console.log(total);
+        totalPriceElem.innerHTML = total;
+        
+      }
+      
+      
+    </script>
+  </body>
+</html>

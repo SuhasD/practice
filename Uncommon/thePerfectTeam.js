@@ -1,17 +1,4 @@
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
 
-var __input_stdin = "";
-var __input_stdin_array = "";
-var __input_currentline = 0;
-
-process.stdin.on('data', function(data) {
-    __input_stdin += data;
-});
-
-/*
- * Complete the function below.
- */
 function differentTeams(skills) {
     // edge case for empty input
     if (skills.length < 1) return 0;
@@ -43,22 +30,21 @@ function differentTeams(skills) {
 
     // Approach 2 (Using hash map: assign individual skill to map and increment counter)
 
-    // let freq = {};
-    // let minTeams = Infinity;
-    // let courses = ['p', 'c', 'm', 'b', 'z'];
+    let freq = {};
+    let minTeams = Infinity;
+    let courses = ['p', 'c', 'm', 'b', 'z'];
 
-    // // Construct frequency table
-    // for (let val of skills) {
-    //     if (!courses.includes(val)) break; // Check for bad inputs (outside of pcmbz)
-    //     else if (freq[val]) freq[val]++;
-    //     else freq[val] = 1;
-    // }
-    // // Loop over freq table and return team number
-    // for (let key in freq){
-    //     if (freq[key] < minTeams) {
-    //         minTeams = freq[key];
-    //     }
-    // }
-    // return minTeams;
+    // Construct frequency table
+    for (let val of skills) {
+        if (!courses.includes(val)) break; // Check for bad inputs (outside of pcmbz)
+        else if (freq[val]) freq[val]++;
+        else freq[val] = 1;
+    }
+    // Loop over freq table and return team number
+    for (let key in freq){
+        if (freq[key] < minTeams) {
+            minTeams = freq[key];
+        }
+    }
+    return minTeams;
 }
-var fs = require('fs');
