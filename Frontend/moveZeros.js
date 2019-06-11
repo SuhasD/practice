@@ -10,8 +10,33 @@ function moveZero(b) {
 }
 console.log(moveZero(a));
 
+// Approach 2 - two pointers
+function moveZerosToRight(a) {
+        var rightIndex = a.length - 1;
+        var leftIndex = 0;
+        while (leftIndex < rightIndex) {
+            if (a[rightIndex] == 0)
+                rightIndex--;
+            else {
+                if (a[leftIndex] == 0) {
+                    swap(a, leftIndex, rightIndex);
+                    rightIndex--;
+                }
+                leftIndex++;
+            }
+        }
+        return a;
+    }
 
-// Approach 2 -> huge space complexity
+function swap(a, i, j) {
+        var temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    
+console.log(moveZerosToRight([2,9,0,1, 0,4,5]));
+
+// Approach 3 -> huge space complexity
 var a = [1, 2, 0, 0, 3, 0, 3, 0, 2, 0, 0, 0, 5, 0];
 var b = [];
 var c = [];
