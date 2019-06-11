@@ -1,0 +1,41 @@
+
+<section role="main">
+    <div id="root-a">
+        <div class="person">
+            <h2 class="person__name">Peter</h2>
+        </div>
+    </div>
+    
+    <div id="root-b">
+        <div class="person">
+            <h1> Friend</h1>
+            <h2 class="person__name">Jonathan</h2>
+       </div>
+    </div>
+</section>
+
+
+function getPath(root, target) {
+    const path = [];
+    let currentNode = target;
+    
+    while(currentNode !== root) {
+        let parentNode = currentNode.parentNode;
+        let index = Array.prototype.indexOf.call(parentNode.childNodes, currentNode);
+        path.unshift(index);
+        currentNode = parentNode;
+    }
+    
+    console.log(path);
+    return path;
+}
+
+function locateNodeFromPath(root, path) {
+    return path.reduce((currentNode, index) => root.childNodes[index], root);
+}
+
+const rootA = document.querySelector('#root-a');
+const rootB = document.querySelector('#root-b'); 
+const target = rootA.querySelector('.person__name');
+
+console.log(locateNodeFromPath(rootB, getPath(rootA, target)));
