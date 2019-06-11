@@ -47,7 +47,7 @@ console.log(add("2750", "3750"));  // will return 6500
 
 // approach 2 
 function add(a, b) {
-    if ((a | 0) == 0 && (b | 0) == 0) {
+   if (parseInt(a) == 0 || parseInt(b) == 0) {
         return '0';
     }
 
@@ -76,7 +76,7 @@ function add(a, b) {
 
 // multiply
 function multiply(a, b) {
-    if ((a | 0) == 0 || (b | 0) == 0) {
+    if (parseInt(a) == 0 || parseInt(b) == 0) {
         return '0';
     }
 
