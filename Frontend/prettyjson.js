@@ -32,3 +32,5 @@
       }
       return output;
     }
+
+console.log(prettyJSON('["foo", {"bar":["baz",null,1.0,2]}]'))
